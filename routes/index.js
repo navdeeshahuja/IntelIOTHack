@@ -3,9 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 
 router.get('/', function (req, res, next) {
-	res.json({
-		status: "index page"
-	});
+	res.render('index',{});
 });
 
 router.get('/status', function (req, res, next) {
