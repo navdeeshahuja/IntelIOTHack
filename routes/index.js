@@ -29,7 +29,6 @@ router.post('/status', function (req, res, next) {
 		if (err) {
 			return console.log(err);
 		}
-
 		res.json({
 			status: "The file was saved!"
 		});
@@ -43,6 +42,10 @@ router.get('/indegredient', function (req, res, next) {
 
 		var cont = JSON.parse(contents);
 		console.log(cont);
+		res.header("Access-Control-Allow-Origin", "*");
+  	res.header("Access-Control-Allow-Methods", "POST, GET");
+  	res.header("Access-Control-Max-Age", "36000");
+  	res.header("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With,auth-token");
 		res.json({
 			indegredient: cont.indegredient
 		});
